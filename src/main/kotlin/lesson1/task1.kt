@@ -2,8 +2,8 @@ package org.example.lesson1
 
 fun main() {
     val ordersCount: Int = 75
-    val messageCongratulation: String = "Поздравляем с покупкой!"
+    val messageCongratulation: String = "РџРѕР·РґСЂР°РІР»СЏРµРј СЃ РїРѕРєСѓРїРєРѕР№!"
 
     println(messageCongratulation)
-    println("Кол-во заказов: $ordersCount")
+    println("РљРѕР»-РІРѕ Р·Р°РєР°Р·РѕРІ: $ordersCount")
 }
