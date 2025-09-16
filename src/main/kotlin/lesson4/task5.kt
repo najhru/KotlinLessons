@@ -26,6 +26,16 @@ package org.example.lesson4
 Напиши программу, которая будет определять, может ли корабль отправиться в плавание. Программа должна анализировать эти данные и выводить результат в консоль. Для анализа должно использоваться единое составное условие, состоящие только из логических операторов.
 */
 
+const val FAV_DAMAGE = false
+const val FAV_MIN_TEAM = 55
+const val FAV_MAX_TEAM = 70
+const val FAV_MIN_PROVISIONS_BOXES = 51
+
+const val REC_DAMAGE = true
+const val REC_MAX_TEAM = 70
+const val REC_WEATHER_GOOD = true
+const val REC_MIN_PROVISIONS_BOXES = 50
+
 fun main() {
     print("Наличие повреждений корпуса(true/false): ")
     val damage: Boolean = readlnOrNull().toBoolean()
@@ -40,8 +50,8 @@ fun main() {
     val weatherGood: Boolean = readlnOrNull().toBoolean()
 
     var navigationApprove =
-        !damage && teamCount >= 55 && teamCount <= 70 && provisionsBoxes > 50  ||
-                teamCount == 70 && weatherGood && provisionsBoxes > 50
+        damage == FAV_DAMAGE && teamCount >= FAV_MIN_TEAM && teamCount <= FAV_MAX_TEAM && provisionsBoxes >= FAV_MIN_PROVISIONS_BOXES  ||
+                damage == REC_DAMAGE && teamCount == REC_MAX_TEAM && weatherGood == REC_WEATHER_GOOD && provisionsBoxes >= REC_MIN_PROVISIONS_BOXES
 
     println("Выход в море ${if (navigationApprove) "" else "не "}разрешен")
 
