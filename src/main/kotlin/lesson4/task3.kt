@@ -24,12 +24,18 @@ package org.example.lesson4
 И типами данных - boolean, boolean, int, String.
  */
 
+const val FAV_SUN = true
+const val FAV_TILT_OPEN = true
+const val FAV_HUMIDITY = 20
+const val FAV_BAD_SEASON = "зима"
+
 fun main() {
     val sun: Boolean = true
     val tiltOpen: Boolean = true
     val humidity: Int = 20
     val season: String = "зима"
     println("Благоприятные ли условия сейчас для роста бобовых? " +
-            "${sun && tiltOpen && humidity == 20 && season != "зима"}")
+            "${sun == FAV_SUN && tiltOpen == FAV_TILT_OPEN && 
+                    humidity == FAV_HUMIDITY && season != FAV_BAD_SEASON}")
 
 }
