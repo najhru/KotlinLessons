@@ -1,6 +1,5 @@
 package org.example.lesson5
 
-
 /**
 Задача 1 к Уроку 5
 
@@ -10,6 +9,7 @@ package org.example.lesson5
  */
 const val MIN_VALUE = 1
 const val MAX_VALUE = 10
+
 fun main() {
     val number1 = (MIN_VALUE..MAX_VALUE).random()
     val number2 = (MIN_VALUE..MAX_VALUE).random()
