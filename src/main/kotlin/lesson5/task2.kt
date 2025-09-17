@@ -16,9 +16,9 @@ const val ALLOWED_AGE = 18
 
 fun main() {
     print("Введите год рождения:")
-    val currentYear = java.time.LocalDate.now().year;
+    val currentYear = java.time.LocalDate.now().year
     val birthYear: Int = readln().toIntOrNull() ?: currentYear
 
     if (currentYear - birthYear >= ALLOWED_AGE)
-      println("Показать экран со скрытым контентом")
+        println("Показать экран со скрытым контентом")
 }
