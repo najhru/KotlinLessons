@@ -1,6 +1,5 @@
 package org.example.lesson5
 
-import kotlin.random.Random
 
 /**
 Задача 1 к Уроку 5
@@ -13,9 +12,9 @@ const val MIN_VALUE = 1
 const val MAX_VALUE = 10
 
 fun main() {
-    val random = Random
-    val number1 = random.nextInt(MIN_VALUE, MAX_VALUE)
-    val number2 = random.nextInt(MIN_VALUE, MAX_VALUE)
+    //val random = Random
+    val number1 = (MIN_VALUE..MAX_VALUE).random()
+    val number2 = (MIN_VALUE..MAX_VALUE).random()
 
     print("Для входа нужно решить пример $number1 + $number2 = ")
     val answer: Int = readln().toIntOrNull() ?: -1
