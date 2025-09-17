@@ -38,7 +38,7 @@ fun main() {
 
     val intersectSet = numbers.intersect(inputNumbers.toSet())
     when {
-        intersectSet.size == 3 -> println("Угаданы все числа и выигран джекпот!")
+        intersectSet.size == COUNT_NUMBERS -> println("Угаданы все числа и выигран джекпот!")
         intersectSet.isNotEmpty() -> println("Вы выиграли утешительный приз!")
         else -> println("Не угадал ни одного числа!")
     }
