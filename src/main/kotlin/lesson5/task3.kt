@@ -11,9 +11,12 @@ package org.example.lesson5
 - программа должна учитывать ввод чисел в обратном порядке.
 */
 
+const val MIN_NUMBER = 0
+const val MAX_NUMBER = 42
+
 fun main() {
-    val number1 = 37
-    val number2 = 23
+    val number1 = (MIN_NUMBER..MAX_NUMBER).random()
+    val number2 = (MIN_NUMBER..MAX_NUMBER).random()
 
     print("Введите первое число: ")
     val inputNumber1: Int = readln().toIntOrNull() ?: -1
@@ -26,7 +29,7 @@ fun main() {
     when {
         won1Number && won2Number -> println("Поздравляем! Вы выиграли главный приз!")
         won1Number || won2Number -> println("Вы выиграли утешительный приз!")
-      else -> println("Неудача!")
+        else -> println("Неудача!")
     }
 
     println("Загаданные числа: $number1, $number2")
