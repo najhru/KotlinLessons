@@ -26,22 +26,31 @@ const val COUNT_NUMBERS = 3
 
 fun main() {
     val range = (MIN_NUMBER_VALUE..MAX_NUMBER_VALUE)
-    val numbers: ArrayList<Int> = ArrayList()
-    val inputNumbers: ArrayList<Int> = ArrayList()
 
-    var cnt = 0
-    while (cnt < COUNT_NUMBERS) {
-        print("Введите ${++cnt} число: ")
-        inputNumbers.add(readln().toIntOrNull() ?: -1)
-        numbers.add(range.random())
+    val lotteryNumbers: ArrayList<Int> = ArrayList()
+    for (i in 1..COUNT_NUMBERS) {
+        lotteryNumbers.add(range.random())
     }
 
-    val intersectSet = numbers.intersect(inputNumbers.toSet())
+    var inputNumbersCount = 0
+    val inputNumbers: ArrayList<Int> = ArrayList()
+    while (inputNumbersCount < COUNT_NUMBERS) {
+        print("Введите ${++inputNumbersCount} число: ")
+        val number = readln().toIntOrNull() ?: -1
+        if (number !in range) {
+            inputNumbersCount--
+            continue
+        }
+        inputNumbers.add(number)
+    }
+
+    val intersectSet = lotteryNumbers.intersect(inputNumbers.toSet())
     when {
         intersectSet.size == COUNT_NUMBERS -> println("Угаданы все числа и выигран джекпот!")
-        intersectSet.isNotEmpty() -> println("Вы выиграли утешительный приз!")
+        intersectSet.size == 2 -> println("Угаданы два числа и получаете крупный приз!")
+        intersectSet.size == 1 -> println("Вы выиграли утешительный приз!")
         else -> println("Не угадал ни одного числа!")
     }
 
-    println("Загаданные числа: ${numbers.joinToString(", ")}")
+    println("Загаданные числа: ${lotteryNumbers.joinToString(", ")}")
 }
