@@ -32,15 +32,14 @@ fun main() {
         lotteryNumbers.add(range.random())
     }
 
-    var inputNumbersCount = 0
+    var inputNumbersCount = 1
     val inputNumbers: ArrayList<Int> = ArrayList()
-    while (inputNumbersCount < COUNT_NUMBERS) {
-        print("Введите ${++inputNumbersCount} число: ")
+    while (inputNumbersCount <= COUNT_NUMBERS) {
+        print("Введите $inputNumbersCount число: ")
         val number = readln().toIntOrNull() ?: -1
-        if (number !in range) {
-            inputNumbersCount--
+        if (number !in range)
             continue
-        }
+        inputNumbersCount++
         inputNumbers.add(number)
     }
 
