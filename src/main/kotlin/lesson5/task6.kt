@@ -46,5 +46,5 @@ fun main() {
         else -> "Ожирение"
     }
 
-    println("Ваш ИМТ=${String.format("%.2f", imt)} и ваша категория веса - $category")
+    println("Ваш ИМТ=${"%.2f".format(imt)} и ваша категория веса - $category")
 }
