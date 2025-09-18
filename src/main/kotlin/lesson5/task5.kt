@@ -44,10 +44,10 @@ fun main() {
     }
 
     val intersectSet = lotteryNumbers.intersect(inputNumbers.toSet())
-    when {
-        intersectSet.size == COUNT_NUMBERS -> println("Угаданы все числа и выигран джекпот!")
-        intersectSet.size == 2 -> println("Угаданы два числа и получаете крупный приз!")
-        intersectSet.size == 1 -> println("Вы выиграли утешительный приз!")
+    when (intersectSet.size) {
+        COUNT_NUMBERS -> println("Угаданы все числа и выигран джекпот!")
+        2 -> println("Угаданы два числа и получаете крупный приз!")
+        1 -> println("Вы выиграли утешительный приз!")
         else -> println("Не угадал ни одного числа!")
     }
 
