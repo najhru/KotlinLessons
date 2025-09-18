@@ -26,6 +26,10 @@ import kotlin.math.pow
 В конце программа должна вывести рассчитанный ИМТ с точностью до двух знаков после запятой и соответствующую категорию веса.
 */
 
+private const val UNDER_WEIGHT = 18.5f
+private const val NORMAL_WEIGHT = 25f
+private const val EXCESS_WEIGHT = 30f
+
 fun main() {
     print("Введите свой вес(в килограммах):")
     val weight: Float = readln().toFloatOrNull() ?: 0f
@@ -33,12 +37,12 @@ fun main() {
     print("Введите свой рост(в сантиметрах):")
     val height: Float = readln().toFloatOrNull() ?: 0f
 
-    val imt = weight / (height/100).pow(2)
+    val imt = weight / (height / 100).pow(2)
 
     val category = when {
-        imt < 18.5f -> "Недостаточная масса тела"
-        imt >= 18.5f && imt < 25f -> "Нормальная масса тела"
-        imt >= 25f && imt < 30 -> "Избыточная масса тела"
+        imt < UNDER_WEIGHT -> "Недостаточная масса тела"
+        imt < NORMAL_WEIGHT -> "Нормальная масса тела"
+        imt < EXCESS_WEIGHT -> "Избыточная масса тела"
         else -> "Ожирение"
     }
 
